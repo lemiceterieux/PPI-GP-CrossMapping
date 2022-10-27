@@ -1,5 +1,4 @@
-This is the code for the paper "Directed Functional Connectivity by Variational Cross-mapping of Psychophysiological Variables", 
-which there will be a preprint out shortly.
+This is the code for the paper "Directed Functional Connectivity by Variational Cross-mapping of Psychophysiological Variables".
 
 The proposed method, in its purest sense, attempts to model pairwise coupling between regions of interests evoked by a psychological
 event by nonparametrically modeling a generative function of event responses using Gaussian processes with inputs being 
@@ -16,3 +15,21 @@ Finally, we reproduce DCM connectivity results of low-level face processing netw
 by the classic Haxby dataset contrasting faces and objects
 
 We provide an operational jupyter notebook example in the jupyter folder
+
+To cite this work, we have a preprint you can use, which at publication should be associated with the journal DOI:
+
+```
+@article{Ghouse2022PPI,
+	author = {Ghouse, Ameer and Schultz, Johannes and Valenza, Gaetano},
+	doi = {10.1101/2022.10.21.513137},
+	elocation-id = {2022.10.21.513137},
+	eprint = {https://www.biorxiv.org/content/early/2022/10/21/2022.10.21.513137.full.pdf},
+	journal = {bioRxiv},
+	publisher = {Cold Spring Harbor Laboratory},
+	title = {Directed Functional Connectivity by Variational Cross-mapping of Psychophysiological Variables},
+	url = {https://www.biorxiv.org/content/early/2022/10/21/2022.10.21.513137},
+	year = {2022},
+	bdsk-url-1 = {https://www.biorxiv.org/content/early/2022/10/21/2022.10.21.513137},
+	bdsk-url-2 = {https://doi.org/10.1101/2022.10.21.513137}
+}
+```
