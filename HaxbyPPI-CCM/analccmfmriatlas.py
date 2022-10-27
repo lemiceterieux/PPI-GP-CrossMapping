@@ -1,4 +1,5 @@
 import numpy as np
+from teaspoon.parameter_selection.FNN_n import FNN_n
 from sklearn.decomposition import PCA
 import scipy.signal as signal
 import scipy.linalg as la
@@ -22,8 +23,9 @@ import torch.multiprocessing as mp
 
 
 def analCaus(dat):
-    m = 5
     t = 1
+    _,m = FNN_n(np.array(dat[0]).squeeze(),t)
+    m += 1
     cuda = (mp.current_process()._identity[0] - 1)%8
     gpR = gp.GP()
     res = gpR.testStateSpaceCorrelation(dat[0], dat[1],dat[2], m, tau=t, cuda=cuda)

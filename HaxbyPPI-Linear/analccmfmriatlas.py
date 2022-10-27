@@ -1,5 +1,6 @@
 import numpy as np
 from sklearn.decomposition import PCA
+from teaspoon.parameter_selection.FNN_n import FNN_n
 import scipy.signal as signal
 import scipy.linalg as la
 from nilearn.glm.first_level import glover_hrf
@@ -22,8 +23,8 @@ import torch.multiprocessing as mp
 
 
 def analCaus(dat):
-    m = 5
     t = 1
+    _, m = FNN_n(dat[0], t)    
     bias = np.ones(np.shape(dat[1])) 
     design = np.concatenate((dat[1][...,None],dat[3][...,None],bias[...,None]),-1).squeeze()
     cuda = (mp.current_process()._identity[0] - 1)%8
