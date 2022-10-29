@@ -162,7 +162,7 @@ def makePlots(rado):
             print(np.min(R),np.max(R), ts.shape, pthreshes)
 
             toCalcEnt = ts<=0.05/bonfact#/len(ts.ravel())
-            resss = np.array(Parallel(n_jobs=250)(delayed(bootstrap)(rado[i],like,bonfact) for kk in range(1000))).T
+            resss = np.array(Parallel(n_jobs=8)(delayed(bootstrap)(rado[i],like,bonfact) for kk in range(1000))).T
             nullrow = resss[0]
             nullcol = resss[1]
             nulljoint = resss[2]
@@ -474,11 +474,11 @@ def makePlots(rado):
         fig,ax = plt.subplots(figsize=(12,12))
 
         Plot[Plot==0] = np.nan
-#        Plot[Plot!=Plot]=0
-#        for zzz,l in enumerate(llabs+rlabs):
-#            if not "occipital_" in l and not "oc_" in l and not "temp" in l and not "collat" in l:
-#                    Plot[zzz] = np.nan
-#                    Plot[:,zzz] = np.nan
+        Plot[Plot!=Plot]=0
+        for zzz,l in enumerate(llabs+rlabs):
+            if not "occipital_" in l and not "oc_" in l and not "temp" in l and not "collat" in l:
+                    Plot[zzz] = np.nan
+                    Plot[:,zzz] = np.nan
         ymask = ~np.all(Plot!=Plot,axis=1)
         xmask = ~np.all(Plot!=Plot,axis=0)
         Plot[Plot==0] = np.nan
@@ -542,7 +542,7 @@ def makePs(d):#for d in dirs[:12]:
     return rado
 
 dirs = [0,1,2,3,4,5]
-temp = Parallel(n_jobs=30)(delayed(makePs)(d) for d in dirs)#range(0,5))
+temp = Parallel(n_jobs=10)(delayed(makePs)(d) for d in dirs)#range(0,5))
 rado = np.array(temp).squeeze()
 print(rado.shape)
 rado = rado.transpose(1,0,2,3)
