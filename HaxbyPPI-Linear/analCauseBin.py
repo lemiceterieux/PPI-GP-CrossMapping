@@ -190,6 +190,9 @@ def makePs(d):#for d in dirs[:12]:
             for m,cl in enumerate([""]):
                 x = 0
                 from glob import glob
+                # Since PPI results are not probabilistic in its 
+                # GLM form, this median has literally zero effect as just
+                # Taking one of the 10 iterations
                 x = np.median([np.load(s) for s in glob("*_{0:d}_*{1}*.npy".format(d,"faces"))],0).squeeze()
                 y = np.median([np.load(s) for s in glob("*_{0:d}_*{1}*.npy".format(d,"houses"))],0).squeeze()
 #                x = y - x

@@ -533,16 +533,6 @@ def makePs(d):#for d in dirs[:12]:
                         res = ((x[j,i,:,None] - x[i,j])).ravel()
                         stat = res[0]
                         pval =  (stat > res[1:]).mean()
-#                        res = []
-#                        for r in x:
-#                            res += [(r[j,i,:,None] - r[i,j]).ravel()]
-#                        res = np.array(res)
-#                        stat = res[:,[0]]
-#                        res[res!=res] = np.nanmax(res)
-#                        pval = np.max((stat >res[:,1:]).mean(1))
-#                        rasort = np.argsort(res)
-#                        cum = np.arange(len(res))/len(res)
-#                        pval = cum[rasort==0]
                         pmat[i,j] = pval
                         best[i,j] = -(stat-res[1:].mean())
                 best[best!=best] = 0
