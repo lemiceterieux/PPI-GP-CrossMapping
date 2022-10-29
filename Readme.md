@@ -12,7 +12,9 @@ and inter-event time intervals (simulations 3 and 4 short-time intervals, simula
 We also validate the proposed method with highly oscillatory chaotic signals that force other highly oscillatory signals (Lorenz Rossler simuls)
 
 Finally, we reproduce DCM connectivity results of low-level face processing networks with the proposed method using an open dataset provided
-by the classic Haxby dataset contrasting faces and objects
+by the classic Haxby dataset contrasting faces and objects. The script
+_analccmfmriatlas.py_ runs the PPI-CCM algorithm while  _analCauseBin.py_ runs
+the statistical analysis of the PPI-CCM results.
 
 We provide an operational jupyter notebook example in the jupyter folder
 
