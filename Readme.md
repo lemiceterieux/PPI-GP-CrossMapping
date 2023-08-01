@@ -7,14 +7,13 @@ states on reconstructed manifolds. Bayesian evidence comparison for a
 for hyperparameters is used to infer whether directional coupling is significant.
 
 We validate the proposed method using simulations of neurovascular systems emerging from neural state equation dynamics with varying conditions 
-and inter-event time intervals (simulations 3 and 4 short-time intervals, simulations 1 and 2 long-time intervals)
+and inter-event time intervals (simulations 3 and 4 short-time intervals, simulations 1 and 2 long-time intervals). 
 
-We also validate the proposed method with highly oscillatory chaotic signals that force other highly oscillatory signals (Lorenz Rossler simuls)
+We furthermore simulate various network topolgies: an acyclic one (SimulationAcyclic/) and a cyclic one (SimulationRing/)
 
 Finally, we reproduce DCM connectivity results of low-level face processing networks with the proposed method using an open dataset provided
-by the classic Haxby dataset contrasting faces and objects. The script
-_analccmfmriatlas.py_ runs the PPI-CCM algorithm while  _analCauseBin.py_ runs
-the statistical analysis of the PPI-CCM results.
+by the Wu-Minn Human Connectome Project S900 release contrasting emotional faces
+and arbitrary shapes. The script _doCCM.py_ runs the PPI-CCM algorithm while  _analyzeResults.py_ runs the statistical analysis of the PPI-CCM results.
 
 We provide an operational jupyter notebook example in the jupyter folder
 
